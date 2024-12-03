@@ -6,9 +6,6 @@ dist/
 wheels/
 *.egg-info
 
-# Nuitka generated files
-dist/
-
 # Virtual environments
 .venv
 
