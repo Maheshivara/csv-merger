@@ -1,38 +1,48 @@
 # CSV Merger
 
 ## O que é
+
 > [!NOTE]
 > Isso é um utilitário para unir dois arquivos do tipo csv que possuam uma coluna em comum por meio de uma interface gráfica simples, caso você possua interesse em algo mais sofisticado e performático (embora sem interface gráfica) verifique a ferramenta [miller](https://miller.readthedocs.io/en/latest/).
 
 Um utilitário que usa a biblioteca Tkinter para prover uma interface gráfica (muito) básica para a junção de dois arquivos csv por meio de uma coluna em comum, para a junção a ferramenta se utiliza da biblioteca [pandas](https://pandas.pydata.org).
 
 ## Como Rodar
+
 ### Ferramentas
+
 - [python](https://www.python.org) >= 3.12
 - [uv](https://github.com/astral-sh/uv)
 
 ### Instruções
+
 1. Basta clonar esse repositório no local desejado e usar o comando:
-    ```bash
-    uv sync
-    ```
-    Esse comando irá criar e configurar o ambiente virtual do projeto com as bibliotecas necessárias.
+   ```bash
+   uv sync
+   ```
+   Esse comando irá criar e configurar o ambiente virtual do projeto com as bibliotecas necessárias.
 
 #### Pelo Código Fonte
+
 1. Inicie o utilitário com:
-    ```bash
-    uv run main.py
-    ```
+   ```bash
+   uv run main.py
+   ```
+
 #### Para Buildar
+
+> [!WARN]
+> No Linux é necessário instalar a ferramenta [patchelf](https://github.com/NixOS/patchelf) usada pela nuitka.
+
 1. O build é feito por meio da ferramenta [nuitka](https://nuitka.net), para realizar o build basta rodar o comando:
-    ```bash
-    uv run -m nuitka --onefile --enable-plugin=tk-inter --windows-console-mode=disable --output-dir=./dist main.py
-    ```
-    Esse comando irá buildar o projeto com apenas um arquivo final (`--onefile`), adicionando o que for necessário do Tkinter (`--enable-plugin=tk-inter`) e sem uma janela de console (`--windows-console-mode=disable`) na pasta dist/diretório (`--output-dir=./dist`).
-    
+   ```bash
+   uv run -m nuitka --onefile --enable-plugin=tk-inter --windows-console-mode=disable --output-dir=./dist main.py
+   ```
+   Esse comando irá buildar o projeto com apenas um arquivo final (`--onefile`), adicionando o que for necessário do Tkinter (`--enable-plugin=tk-inter`) e sem uma janela de console (`--windows-console-mode=disable`) na pasta dist/diretório (`--output-dir=./dist`).
 2. Inicie o arquivo executável na pasta `dist`.
 
 ## Como Usar
+
 1. Selecione os dois arquivos que deseja unir através dos botões de seleção.
 2. Na caixa de escolha ao lado direito de cada botão de seleção escolha o nome da coluna pela qual você deseja que o documento seja unido.
 3. Escolha a pasta de destino do documento.
