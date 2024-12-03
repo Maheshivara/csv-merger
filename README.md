@@ -24,7 +24,7 @@ Um utilitário que usa a biblioteca Tkinter para prover uma interface gráfica (
     uv run main.py
     ```
 #### Para Buildar
-1. O build é feito por meio da lib [nuitka](https://nuitka.net), para realizar o build basta rodar o comando:
+1. O build é feito por meio da ferramenta [nuitka](https://nuitka.net), para realizar o build basta rodar o comando:
     ```bash
     uv run -m nuitka --onefile --enable-plugin=tk-inter --windows-console-mode=disable --output-dir=./dist main.py
     ```
@@ -39,4 +39,4 @@ Um utilitário que usa a biblioteca Tkinter para prover uma interface gráfica (
 4. Selecione as colunas que devem ser mantidas de cada documento (ao menos uma em cada).
 5. Pressione o botão de `confirmar` na parte inferior da tela.
 
-Com tudo ocorrendo bem o novo documento deve ser criado na pasta escolhida no passo 3, o nome será algo como`merged_20241203184532.csv` com a parte numérica sendo retirada da data atual.
+Com tudo ocorrendo bem o novo documento deve ser criado na pasta escolhida no passo 3, o nome será algo como `merged_20241203184532.csv` com a parte numérica sendo retirada da data atual.
