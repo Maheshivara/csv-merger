@@ -1,0 +1,14 @@
+[project]
+name = "csv-merger"
+version = "0.1.0"
+description = "Pequeno utilitário para unir CSVs com base em uma coluna comum."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "nuitka>=2.5.4",
+]
