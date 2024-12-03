@@ -11,7 +11,6 @@ from src.merger import merge_csv
 
 
 def start_app():
-    print(base_prefix)
     root = tk.Tk()
     root.title("Unir CSVs")
 
