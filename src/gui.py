@@ -43,7 +43,7 @@ def start_app():
     left_columns_frame = tk.Frame(columns_frame)
     left_columns_frame.grid(row=1, column=0, columnspan=3, sticky="nw")
     right_columns_frame = tk.Frame(columns_frame)
-    right_columns_frame.grid(row=1, column=1, columnspan=3, sticky="nw")
+    right_columns_frame.grid(row=1, column=3, columnspan=3, sticky="nw")
 
     left_selected_columns = {}
     right_selected_columns = {}
@@ -84,20 +84,18 @@ def start_app():
         if not left_on or not right_on:
             tk.messagebox.showerror("Erro", "Escolha as colunas de junção.")
             return
-
-        if left_selected.length == 0 or right_selected.length == 0:
-            tk.messagebox.showerror(
-                "Erro", "Selecione pelo menos uma coluna de cada CSV."
-            )
-            return
-
-        try:
-            left_selected = [
+        
+        left_selected = [
                 col for col, var in left_selected_columns.items() if var.get()
             ]
-            right_selected = [
-                col for col, var in right_selected_columns.items() if var.get()
-            ]
+        right_selected = [
+            col for col, var in right_selected_columns.items() if var.get()
+        ]
+        if len(left_selected) == 0 or len(right_selected) == 0:
+            tk.messagebox.showerror("Erro", "Selecione pelo menos uma coluna de cada CSV.")
+            return
+        
+        try:
             merge_csv(
                 [left_file_path.get(), right_file_path.get()],
                 left_on,
