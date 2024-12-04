@@ -84,17 +84,17 @@ def start_app():
         if not left_on or not right_on:
             tk.messagebox.showerror("Erro", "Escolha as colunas de junção.")
             return
-        
-        left_selected = [
-                col for col, var in left_selected_columns.items() if var.get()
-            ]
+
+        left_selected = [col for col, var in left_selected_columns.items() if var.get()]
         right_selected = [
             col for col, var in right_selected_columns.items() if var.get()
         ]
         if len(left_selected) == 0 or len(right_selected) == 0:
-            tk.messagebox.showerror("Erro", "Selecione pelo menos uma coluna de cada CSV.")
+            tk.messagebox.showerror(
+                "Erro", "Selecione pelo menos uma coluna de cada CSV."
+            )
             return
-        
+
         try:
             merge_csv(
                 [left_file_path.get(), right_file_path.get()],
