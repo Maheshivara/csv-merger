@@ -32,7 +32,7 @@ Um utilitário que usa a biblioteca Tkinter para prover uma interface gráfica (
 #### Para Buildar
 
 > [!WARNING]
-> No Linux é necessário instalar a ferramenta [patchelf](https://github.com/NixOS/patchelf) usada pela nuitka.
+> No Linux é necessário instalar os pacotes [patchelf](https://github.com/NixOS/patchelf) e `python3-dev` usados pela nuitka, além do `python3-tk` necessário para a aplicação.
 
 1. O build é feito por meio da ferramenta [nuitka](https://nuitka.net), para realizar o build basta rodar o comando:
    ```bash
